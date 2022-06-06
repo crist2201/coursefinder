@@ -1,0 +1,11 @@
+.header-container {
+  border-bottom: 1px solid black;
+  text-align: left;
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+}
