@@ -6,14 +6,11 @@
 html,
 body {
   background-color: whitesmoke;
+
 }
 
 .App {
+  display: flex;
   min-height: 100vh;
-  justify-content: center;
-}
-
-.course-container {
-  margin-top: 70px;
-  padding: 10px;
+  flex-direction: column;
 }
