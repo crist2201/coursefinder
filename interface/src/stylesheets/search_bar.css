@@ -1,4 +1,5 @@
 .search-container {
+  display: flex;
   font-family: 'Times New Roman', Times, serif;
   flex-direction: row;
   padding: 8px;
