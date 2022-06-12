@@ -1,12 +1,14 @@
 .search-container {
+  display: flex;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 12px;
+  flex-direction: row;
+  padding: 8px;
 }
 
 #bar {
   width: 500px;
   height: 21px;
-  float: left;
+
 
 }
 
@@ -15,8 +17,6 @@
   color: #f2f2f2;
   width: 70px;
   height: 25px;
-  float: right;
-  margin-right: 750px;
   border: none;
   cursor: pointer;
 }
