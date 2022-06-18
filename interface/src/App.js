@@ -6,27 +6,31 @@ import SearchBar from './components/search_bar';
 import Courses from './components/courses';
 
 function App() {
-  const [courses, setCourses] = useState({});
-  const getCourses = (() => {
+  const [courses, setCourses] = useState([]);
+  const [title, setTitle] = useState('');
+
+  const getTitle = (e) => { setTitle(e.target.value) };
+
+
+  const getCourses = () => {
     const URL = 'http://127.0.0.1:8000/courses'
-    // console.log('Clicked')
-    fetch(URL + '?' + new URLSearchParams({
-      title: 'web',
-    }))
+    fetch(URL + '?' + new URLSearchParams({ title }))
       .then(response => {
         return response.json()
       })
-      .then(data => {
-        console.log(data)
-        setCourses(data['data'][0])
+      .then(results => {
+        console.log(results.data)
+        setCourses(results.data)
       })
-  })
+  };
+
+
+
   return (
     < div className="App" >
       <Header />
-      <SearchBar getCourses={getCourses} />
-      <h1>{courses.title}</h1>
-      <Courses />
+      <SearchBar getCourses={getCourses} getTitle={getTitle} />
+      <Courses courses={courses} />
       <Footer />
     </div >
   );
