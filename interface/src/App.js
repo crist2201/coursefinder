@@ -1,9 +1,10 @@
-import react, { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/header';
 import Footer from './components/footer';
 import SearchBar from './components/search_bar';
 import Courses from './components/courses';
+
 
 function App() {
   const [courses, setCourses] = useState([]);

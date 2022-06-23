@@ -31,7 +31,7 @@ def udemy_courses(title, page, page_size):
         'Content-Type': 'application/json;charset=utf-8'
     }
     params = {
-        'fields[course]': 'title,headline,avg_rating,price,url,visible_instructors',
+        'fields[course]': 'title,headline,avg_rating,price,url,num_subscribers,image_50x50,visible_instructors',
         'page': page,
         'page_size': page_size,
     }
@@ -43,7 +43,7 @@ def udemy_courses(title, page, page_size):
 
     for item in courses['results']:
         if title in item['title'].lower():
-            # print('Titulos disponibles:', item)
+            print('Titulos disponibles:', item)
             # print(sort_data(item))
             clean = sort_data(item, 'Udemy')
             data.append(clean)
@@ -59,7 +59,7 @@ def edx_courses(title, page, page_size):
         'Content-Type': 'application/json;charset=utf-8'
     }
     params = {
-        'fields[course]': 'title,headline,avg_rating,price,url,visible_instructors',
+        'fields[course]': 'title,headline,avg_rating,price,url,num_subscribers,image_50x50,visible_instructors',
         'page': page,
         'page_size': page_size,
     }
@@ -87,7 +87,10 @@ def sort_data(data, platform):
         'rating': data['avg_rating'],
         'url': data['url'],
         'price': data['price'],
+        'suscribers': data['num_subscribers'],
         'instructor': data['visible_instructors'][0]['title'],
+        'url_instructor': data['visible_instructors'][0]['url'],
         'platform': platform,
+        'image': data['image_50x50'],
     }
     return parameters

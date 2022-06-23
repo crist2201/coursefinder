@@ -5,27 +5,27 @@ import '../stylesheets/courses.css'
 function Courses({ courses }) {
   const showCourse = courses.map((e, i) => {
     return (
-      <div className='courses-container'>
-        <p className='description'>{e.description}</p>
-        <h3 className='instructor'>{e.instructor}</h3>
-        <p className='price'>$ {e.price}</p>
-        <a className='url' href={e.url}>Link to the course</a>
-
-        <div className='info-container'>
-          <h2 className='title'>{e.title}  </h2>
-          <h2 className='platform'> ({e.platform}) </h2>
-          {/* <h3 className='rating'>{e.rating}</h3> */}
-          <DynamicStar className='rating' rating={parseFloat(e.rating)} totalStars={5} outlined={true} width={20} height={20} />
+      <div className="card">
+        <div className='title-container'>
+          <a className='title' href={`https://www.udemy.com${e.url}`} target='_blank'>{e.title}</a>
+          <p className='platform'> ({e.platform}) </p>
+          <p id='rating'>{e.rating.toFixed(1)}</p>
+          <DynamicStar rating={e.rating.toFixed(1)} totalStars={5} outlined={true} emptyStarColor='#023047' width={20} height={20} />
         </div>
-      </div>
-
+        <div className='description-container'>
+          <a className='instructor' href={`https://www.udemy.com${e.url_instructor}`} target='_blank'> {e.instructor}</a>
+          <p className='description'>{e.description}</p>
+          <p className='price'>{e.price}</p>
+        </div>
+      </div >
     )
   });
 
   return (
-    <div >
+    <>
       {showCourse}
-    </div>
+    </>
+
   );
 }
 
