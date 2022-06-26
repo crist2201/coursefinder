@@ -29,8 +29,8 @@ function App() {
 
   return (
     < div className="App" >
-      <Header />
-      <SearchBar getCourses={getCourses} getTitle={getTitle} />
+      <Header getCourses={getCourses} getTitle={getTitle} />
+      {/* <SearchBar getCourses={getCourses} getTitle={getTitle} /> */}
       <Courses courses={courses} />
       <Footer />
     </div >
