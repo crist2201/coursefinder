@@ -20,7 +20,6 @@ function App() {
         return response.json()
       })
       .then(results => {
-        console.log(results.data)
         setCourses(results.data)
       })
   };

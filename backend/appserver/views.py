@@ -44,8 +44,7 @@ def udemy_courses(search_title, page, page_size):
 
     for item in courses['results']:
         if search_title in item['title'].lower():
-            # print(sort_data(item))
-            clean = sort_data(item, 'Udemy')
+            clean = order_data(item, 'Udemy')
             data.append(clean)
     return data
 
@@ -69,15 +68,14 @@ def edx_courses(search_title, page, page_size):
     courses = response.json()
     search_title = search_title.lower()
     data = []
-
     for item in courses['results']:
         if search_title in item['title'].lower():
-            clean = sort_data(item, 'Edx')
+            clean = order_data(item, 'Edx')
             data.append(clean)
     return data
 
 
-def sort_data(data, platform):
+def order_data(data, platform):
 
     parameters = {
         'id': data['id'],
