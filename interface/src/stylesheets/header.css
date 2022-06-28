@@ -1,10 +1,19 @@
-.header-container {
-  border-bottom: 1px solid black;
-  text-align: left;
-  font-size: large;
-  font-family: 'Times New Roman', Times, serif;
-  padding: 5px;
-  left: 0;
-  top: 0;
-  right: 0;
+.navbar-expand-sm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  background-color: #e4e8eb;
+}
+
+#header-container {
+  padding: 1rem;
+}
+
+#header {
+  font-size: 2.5rem;
+  padding: 0;
+  margin-right: 2rem;
+  margin-bottom: 0;
+  color: rgba(12, 12, 12, 0.712);
 }

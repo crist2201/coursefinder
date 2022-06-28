@@ -1,0 +1,93 @@
+.card-deck {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#courses-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-size: 100%;
+  border-radius: 0.35rem;
+  max-width: 550px;
+  width: 100%;
+  border-color: rgb(68, 68, 68);
+  background-color: whitesmoke;
+  font-style: up;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0px 10px;
+
+}
+
+#title-container {
+  background-color: white;
+  font-size: 1.1rem;
+}
+
+
+#title {
+  padding: 0.5rem 0.0rem;
+  font-weight: bold;
+  margin-bottom: 0rem;
+  color: rgb(235, 35, 0);
+}
+
+
+#platform {
+  color: #6c757d;
+  font-weight: bold;
+  padding: 0.5rem 0rem;
+  margin-bottom: 0rem;
+
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#description {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+#instructor {
+  color: #6c757d;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0px 10px;
+  font-size: 0.8rem;
+}
+
+#rating {
+  margin-bottom: 0px;
+  color: rgb(255, 188, 0);
+  font-weight: bold;
+}
+
+#suscribers {
+  margin-bottom: 0px;
+  color: #6c757d;
+  font-weight: bold;
+}
+
+#price {
+  color: rgb(82, 80, 80);
+  padding: 0.5rem 0rem;
+  font-weight: bold;
+
+}
