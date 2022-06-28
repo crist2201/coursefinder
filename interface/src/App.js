@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import Header from './components/header';
 import Footer from './components/footer';
-import SearchBar from './components/search_bar';
 import Courses from './components/courses';
 
 
@@ -29,7 +28,6 @@ function App() {
   return (
     < div className="App" >
       <Header getCourses={getCourses} getTitle={getTitle} />
-      {/* <SearchBar getCourses={getCourses} getTitle={getTitle} /> */}
       <Courses courses={courses} />
       <Footer />
     </div >

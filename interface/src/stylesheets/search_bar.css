@@ -1,23 +1,18 @@
-.search-container {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  padding: 8px;
+#bar {
+  width: 1000px;
+  height: 48px;
+  font-size: 0.9rem;
+  margin-right: 1rem;
+  border-radius: 10px;
 }
 
-/* #bar {
-  width: 500px;
-  height: 21px;
 
-
-} */
-
-
-/* #but {
-  background-color: #0074D9;
-  color: #f2f2f2;
-  width: 70px;
-  height: 25px;
-  border: none;
-  cursor: pointer;
-} */
+#but {
+  border-radius: 10px;
+  height: 48px;
+  width: 75px;
+  padding: 0px 10px;
+  font-size: 1.2rem;
+  background-color: rgba(247, 42, 42, 0.856);
+  border-color: rgba(247, 42, 42, 0.856);
+}
