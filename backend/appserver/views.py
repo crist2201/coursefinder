@@ -1,5 +1,7 @@
 
 from distutils.command.clean import clean
+from itertools import count
+from pydoc import pager
 from turtle import title
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -16,8 +18,9 @@ def health(request):
 def courses_list(request):
     if request.method == 'GET':
         title = request.GET.get('title', None)
-        udemy = udemy_courses(search_title=title, page=1, page_size=12)
-        courses = {'data': udemy}
+        page=request.GET.get('page',1)
+        [count,udemy] = udemy_courses(search_title=title, page=page, page_size=6)
+        courses = {'count':count, 'data': udemy}
         return JsonResponse(courses)
 
 
@@ -39,13 +42,14 @@ def udemy_courses(search_title, page, page_size):
     response = requests.get(url, auth=auth, headers=headers, params=params)
     courses = response.json()
     search_title = search_title.lower()
+    count=courses['count']
     data = []
 
     for item in courses['results']:
         if search_title in item['title'].lower():
             clean = order_data(item, 'Udemy')
             data.append(clean)
-    return data
+    return count,data
 
 def order_data(data, platform):
 

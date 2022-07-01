@@ -1,9 +1,8 @@
 .card-deck {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin: 10px 0px 10px 0px;
 }
 
 #courses-container {
@@ -14,9 +13,9 @@
   border-radius: 0.35rem;
   max-width: 550px;
   width: 100%;
+  margin-bottom: 10px;
   border-color: rgb(68, 68, 68);
   background-color: whitesmoke;
-  font-style: up;
 }
 
 .card-header {
