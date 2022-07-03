@@ -33,18 +33,15 @@ function Courses({ courses, currentPage, nextPage, prevPage, totalPages, setPage
     )
   });
 
-
-  if (totalPages !== 0) {
-    return (
-
-      <div className='principal-container'>
-        <div className='card-deck container-fluid'>
-          {currentPageData}
-        </div>
-        <Pagination currentPage={currentPage} nextPage={nextPage} prevPage={prevPage} totalPages={totalPages} setPage={setPage} />
+  return (
+    <div className='principal-container'>
+      <div className='card-deck container-fluid'>
+        {currentPageData}
       </div>
-    )
-  }
-}
+      <Pagination currentPage={currentPage} nextPage={nextPage} prevPage={prevPage} totalPages={totalPages} setPage={setPage} />
+    </div>
+  )
+};
+
 
 export default Courses

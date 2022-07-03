@@ -16,10 +16,6 @@ function App() {
 
   const getTitle = (e) => { setTitle(e.target.value) };
 
-  const showPage = (p) => {
-    setPage(p);
-
-  }
 
   const nextPage = () => {
     if (page > totalPages) {
@@ -38,10 +34,15 @@ function App() {
 
   useEffect(() => {
 
-    if (page > 1) {
+    if (page > 0) {
       getCourses();
     }
   }, [page]);
+
+
+  const clearData = () => {
+    setPage(1);
+  };
 
 
   const getCourses = () => {
@@ -59,8 +60,8 @@ function App() {
 
   return (
     < div className="App" >
-      <Header getCourses={getCourses} getTitle={getTitle} />
-      <Courses courses={courses} currentPage={page} nextPage={nextPage} prevPage={prevPage} totalPages={totalPages} setPage={showPage} />
+      <Header getCourses={getCourses} getTitle={getTitle} clearData={clearData} />
+      <Courses courses={courses} currentPage={page} nextPage={nextPage} prevPage={prevPage} totalPages={totalPages} setPage={setPage} />
       <Footer />
     </div >
   );
