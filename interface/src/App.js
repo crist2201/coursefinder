@@ -10,7 +10,7 @@ function App() {
   const [courses, setCourses] = useState([]);
   const [title, setTitle] = useState('');
   const [count, setCount] = useState(0);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const pageSize = 6;
   const totalPages = Math.ceil(count / pageSize);
 
@@ -33,14 +33,11 @@ function App() {
   }
 
   useEffect(() => {
-
-    if (page > 0) {
-      getCourses();
-    }
+    getCourses();
   }, [page]);
 
 
-  const clearData = () => {
+  function clearData() {
     setPage(1);
   };
 
@@ -60,7 +57,7 @@ function App() {
 
   return (
     < div className="App" >
-      <Header getCourses={getCourses} getTitle={getTitle} clearData={clearData} />
+      <Header getTitle={getTitle} clearData={clearData} />
       <Courses courses={courses} currentPage={page} nextPage={nextPage} prevPage={prevPage} totalPages={totalPages} setPage={setPage} />
       <Footer />
     </div >
