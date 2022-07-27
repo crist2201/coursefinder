@@ -21,14 +21,20 @@ function App() {
     if (page > totalPages) {
       setPage(totalPages);
     }
-    setPage(page + 1);
+    else {
+      setPage(page + 1);
+    }
+
   }
 
   const prevPage = () => {
     if (page < 1) {
       setPage(1);
     }
-    setPage(page - 1);
+    else {
+      setPage(page - 1);
+    }
+
 
   }
 

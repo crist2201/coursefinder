@@ -6,7 +6,7 @@ import Pagination from '../components/pagination';
 
 function Courses({ courses, currentPage, nextPage, prevPage, totalPages, setPage }) {
 
-  const currentPageData = courses.map((e) => {
+  const coursesPage = courses.map((e) => {
     return (
       <div className="card" id='courses-container' key={e.id}>
         <div className="card-header" id='title-container'>
@@ -38,7 +38,7 @@ function Courses({ courses, currentPage, nextPage, prevPage, totalPages, setPage
     return (
       <div className='principal-container'>
         <div className='card-deck container-fluid'>
-          {currentPageData}
+          {coursesPage}
         </div>
         <Pagination currentPage={currentPage} nextPage={nextPage} prevPage={prevPage} totalPages={totalPages} setPage={setPage} />
       </div>
