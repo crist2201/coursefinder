@@ -1,8 +1,3 @@
-
-from distutils.command.clean import clean
-from itertools import count
-from pydoc import pager
-from turtle import title
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.http.response import JsonResponse
